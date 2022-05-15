@@ -3,12 +3,24 @@
 
 .navbar-brand {
     font-family: 'Pacifico', cursive;
-    font-size: 40px;
-        background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
-        -webkit-background-clip: text;
-        -moz-background-clip: text;
-        background-clip: text;
-        color: transparent;
+    font-size: 50px;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+.fa-gear, .fa-circle-info {
+    color: black;
+    font-size: 18px;
 }
 
 #guess-container {
