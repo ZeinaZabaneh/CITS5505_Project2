@@ -51,14 +51,22 @@
     font-size: 20px;
     text-align: center;
     border-radius: 3px;
+    width: 60px;
+    height: 60px;
   }
 
   .game {
       display: flex;
-      align-items: center;
       justify-content: center;
-      margin: auto;
+      /* margin: auto; */
       height: 90vh;
+      width: 100vw;
+  }
+
+  .game-footer{
+      font-size: 12px;
+      color: lightslategray;
+      text-align: center;
   }
 
     /* .section {
