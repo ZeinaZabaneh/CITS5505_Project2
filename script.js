@@ -1,17 +1,3 @@
-$(".grid-item").click(function(event) {
-	
-    console.log("clicked")
-
-	var box_id = "#"+$(this).attr('id');
-  
-	var colours = ["red","blue","green","orange","pink","yellow"];
-  
-    $(box_id).attr('data-colour_id', ((parseInt($(box_id).attr('data-colour_id'))+1)%5))
-  
-	$(box_id).css('background-color', colours[parseInt($(box_id).attr('data-colour_id'))]);
-
-});
-
 // How to play pop-up
 
 window.addEventListener("load", function(){
@@ -29,4 +15,18 @@ document.querySelector("#info").addEventListener("click", function(){
 
 document.querySelector("#close").addEventListener("click", function(){
     document.querySelector(".popup").style.display = "none";
+});
+
+$('.grid-item').click(function(event) {
+	
+    console.log("clicked")
+
+	var box_id = "#"+$(this).attr('id');
+  
+	var colours = ["red","blue","green","orange","pink","yellow"];
+  
+    $(box_id).attr('data-colour_id', ((parseInt($(box_id).attr('data-colour_id'))+1)%5))
+  
+	$(box_id).css('background-color', colours[parseInt($(box_id).attr('data-colour_id'))]);
+
 });
