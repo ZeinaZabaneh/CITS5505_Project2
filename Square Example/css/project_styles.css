@@ -1,0 +1,182 @@
+body {
+margin: 0; 
+font-family: 'Roboto', sans-serif;
+font-size: 1rem;
+line-height: 1.5;
+overflow-x: hidden;      
+}
+
+.heading {
+text-align: center;
+padding: 15px;
+font-size: 35px;
+font-family: "Optima";
+}
+
+.dark-mode {
+background-color: black;
+color: white;
+}
+
+.light-mode {
+background-color: white;
+color: black;
+}
+
+ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #333;
+}
+
+li {
+float: left;
+}
+
+li a, .dropbtn {
+display: inline-block;
+color: white;
+text-align: center;
+font-size: 20px;
+padding: 14px 16px;
+margin: 0;
+text-decoration: none;
+}
+
+li img, .dropbtn {
+display: inline-block;
+padding-top: 0px;
+margin: 9px;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+background-color: #ddd;
+}
+
+li.dropdown {
+display: inline-block;
+}
+
+.dropdown-content {
+visibility: hidden;
+opacity: 0;
+position: absolute;
+border-radius: 5px;
+min-width: 120px;
+box-shadow: 5px 5px 3px 3px gray;
+}
+
+.dropdown-content a{
+color: black;
+padding: 12px 16px;
+display: block;
+text-align: left;
+}
+
+.dropdown-content a:hover {
+background-color: white;
+}
+
+.dropdown:hover .dropdown-content {
+visibility: visible;
+opacity: 1;
+}
+
+.slide_div {
+position: relative;
+left: 0%;    /* left set to 0 so document loads in on 'About' by defualt */
+width: 300%;
+transition: left 0.4s;
+display: flex;
+flex-flow: row nowrap;
+}
+
+.content_block {
+height: 100%;
+padding: 2rem;
+text-align: center;
+display: flex;
+flex: 1;
+flex-flow: column nowrap;
+align-items: center;
+justify-content: center;
+}
+
+.content_header {
+font-weight: 500;
+margin: 2rem 0 1rem;
+text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+text-transform: uppercase;
+}
+
+.content {
+margin-bottom: 3rem;
+max-width: 70%;
+}
+
+#cod_example {
+animation-name: cod;
+animation-duration: 4s;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+}
+
+@keyframes cod{
+0%   {transform: translate(200%, 0%); opacity: 0;}
+25%  {transform: translate(0%, 0%); opacity: 1;}
+50% {transform: translate(-200%, 0%); opacity: 0;}
+75% {transform: translate(-200%, 0%); opacity: 0;}
+100% {transform: translate(-200%, 0%); opacity: 0;}
+}
+
+#exec_cod_example {
+animation: exec_cod 4s linear infinite;
+}
+
+@keyframes exec_cod{
+0%   {transform: translate(-200%, 0%); opacity: 0;}
+25%   {transform: translate(-200%, 0%); opacity: 0;}
+50%  {transform: translate(-200%, 0%); opacity: 0;}
+75% {transform: translate(0%, 0%); opacity: 1;}
+100% {transform: translate(200%, 0%); opacity: 0;}
+}
+
+.image_flip {
+background-color: transparent;
+width: 300px;
+height: 300px;
+perspective: 1000px;
+}
+
+.flip_box {
+position: relative;
+width: 100%;
+height: 100%;
+text-align: center;
+transition: transform 0.8s;
+transform-style: preserve-3d;
+}
+
+.image_flip:hover .flip_box {
+transform: rotateY(180deg);
+}
+
+.box_front, .box_back {
+position: absolute;
+width: 100%;
+height: 100%;
+backface-visibility: hidden;
+}
+
+.box_front {
+background-color: #dbdbdb;
+color: black;
+}
+
+.box_back {
+background-color: #dbdbdb;
+color: white;
+transform: rotateY(180deg);
+}
