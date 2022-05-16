@@ -1,5 +1,3 @@
-console.log("here");
-
 $(".grid-item").click(function(event) {
 	
     console.log("clicked")
