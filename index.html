@@ -13,12 +13,17 @@
     />
     <link rel="stylesheet" href="style.css" />
     <!-- JavaScript and jQuery -->
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.js"></script> -->
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
     <!-- Font Awesome (for icons) -->
     <script
       src="https://kit.fontawesome.com/d880e4a37f.js"
@@ -77,38 +82,169 @@
     <section>
       <div class="game">
         <div class="grid-container" id="guess-container">
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
+          <div class="grid-item" id="row_1_box_1" data-colour_id="1"></div>
+          <div
+            class="grid-item row-1"
+            id="row_1_box_2"
+            data-colour_id="1"
+          ></div>
+          <div
+            class="grid-item row-1"
+            id="row_1_box_3"
+            data-colour_id="1"
+          ></div>
+          <div
+            class="grid-item row-1"
+            id="row_1_box_4"
+            data-colour_id="1"
+          ></div>
+
+          <div
+            class="grid-item row-2"
+            id="row_2_box_1"
+            data-colour_id="1"
+          ></div>
+          <div
+            class="grid-item row-2"
+            id="row_2_box_2"
+            data-colour_id="1"
+          ></div>
+          <div
+            class="grid-item row-2"
+            id="row_2_box_3"
+            data-colour_id="1"
+          ></div>
+          <div
+            class="grid-item row-2"
+            id="row_2_box_4"
+            data-colour_id="1"
+          ></div>
+
+          <div
+            class="grid-item row-3"
+            id="row_3_box_1"
+            data-colour_id="1"
+          ></div>
+          <div
+            class="grid-item row-3"
+            id="row_3_box_2"
+            data-colour_id="1"
+          ></div>
+          <div
+            class="grid-item row-3"
+            id="row_3_box_3"
+            data-colour_id="1"
+          ></div>
+          <div
+            class="grid-item row-3"
+            id="row_3_box_4"
+            data-colour_id="1"
+          ></div>
+
+          <div
+            class="grid-item row-4"
+            id="row_4_box_1"
+            data-colour_id="1"
+          ></div>
+          <div
+            class="grid-item row-4"
+            id="row_4_box_2"
+            data-colour_id="1"
+          ></div>
+          <div
+            class="grid-item row-4"
+            id="row_4_box_3"
+            data-colour_id="1"
+          ></div>
+          <div
+            class="grid-item row-4"
+            id="row_4_box_4"
+            data-colour_id="1"
+          ></div>
+
+          <div
+            class="grid-item row-5"
+            id="row_5_box_1"
+            data-colour_id="1"
+          ></div>
+          <div
+            class="grid-item row-5"
+            id="row_5_box_2"
+            data-colour_id="1"
+          ></div>
+          <div
+            class="grid-item row-5"
+            id="row_5_box_3"
+            data-colour_id="1"
+          ></div>
+          <div
+            class="grid-item row-5"
+            id="row_5_box_4"
+            data-colour_id="1"
+          ></div>
+
+          <div
+            class="grid-item row-6"
+            id="row_6_box_1"
+            data-colour_id="1"
+          ></div>
+          <div
+            class="grid-item row-6"
+            id="row_6_box_2"
+            data-colour_id="1"
+          ></div>
+          <div
+            class="grid-item row-6"
+            id="row_6_box_3"
+            data-colour_id="1"
+          ></div>
+          <div
+            class="grid-item row-6"
+            id="row_6_box_4"
+            data-colour_id="1"
+          ></div>
+
+          <div
+            class="grid-item row-7"
+            id="row_7_box_1"
+            data-colour_id="1"
+          ></div>
+          <div
+            class="grid-item row-7"
+            id="row_7_box_2"
+            data-colour_id="1"
+          ></div>
+          <div
+            class="grid-item row-7"
+            id="row_7_box_3"
+            data-colour_id="1"
+          ></div>
+          <div
+            class="grid-item row-7"
+            id="row_7_box_4"
+            data-colour_id="1"
+          ></div>
+
+          <div
+            class="grid-item row-8"
+            id="row_8_box_1"
+            data-colour_id="1"
+          ></div>
+          <div
+            class="grid-item row-8"
+            id="row_8_box_2"
+            data-colour_id="1"
+          ></div>
+          <div
+            class="grid-item row-8"
+            id="row_8_box_3"
+            data-colour_id="1"
+          ></div>
+          <div
+            class="grid-item row-8"
+            id="row_8_box_4"
+            data-colour_id="1"
+          ></div>
         </div>
         <div class="grid-container" id="hint-container">
           <div class="grid-item"></div>
@@ -133,6 +269,7 @@
     <footer class="game-footer">
       <p>© 2022, Benjamin Willcocks & Zeina Zabaneh</p>
     </footer>
+
     <script src="script.js"></script>
   </body>
 </html>
