@@ -26,6 +26,20 @@
     ></script>
   </head>
   <body>
+    <div class="popup">
+      <h2 id="HowToPlay">How to Play</h2>
+      <p>
+        Guess the <b>Colourdle</b> code in 8 tries.<br /><br />
+        Click on each square to cycle through the colours to choose your
+        code.<br /><br />
+        Hit the enter button to submit your guess.<br /><br />
+        After each guess, the two hint tiles on the right of the row will show
+        how many colours have been guessed correctly and in the right spot
+        (green) and how many colours have been guessed correctly but in the
+        wrong spot (yellow).
+      </p>
+      <a href="#" id="close">Let's Go</a>
+    </div>
     <header>
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
@@ -47,7 +61,7 @@
             <ul class="navbar-nav">
               <li class="nav-item">
                 <a href="#" class="nav-link d-flex flex-column">
-                  <i class="fa-solid fa-circle-info"></i>
+                  <i class="fa-solid fa-circle-info" id="info"></i>
                 </a>
               </li>
               <li class="nav-item">
@@ -119,5 +133,6 @@
     <footer class="game-footer">
       <p>© 2022, Benjamin Willcocks & Zeina Zabaneh</p>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
