@@ -105,10 +105,14 @@ function row_change() {
 		var box_id = "#"+$(this).attr('id');
 	  
 		var colours = ["red","blue","green","orange","pink","yellow"];
+
+		animateCSS(document.getElementById($(this).attr('id')), 'bounceIn');
 	  
 		$(box_id).attr('data-colour_id', ((parseInt($(box_id).attr('data-colour_id'))+1)%5))
 	  
 		$(box_id).css('background-color', colours[parseInt($(box_id).attr('data-colour_id'))]);
+
+		// animateCSS(document.getElementById($(this).attr('id')), 'flipInX');
 
 		// console.log($(box_id).attr('data-colour_id'));
 
@@ -145,3 +149,25 @@ function row_change() {
 
 }
 
+const animateCSS = (element, animation, prefix = 'animate__') =>
+
+  // We create a Promise and return it
+  new Promise((resolve, reject) => {
+    const animationName = `${prefix}${animation}`;
+    // const node = document.querySelector(element);
+    const node = element
+	node.style.setProperty("pointer-events", "none");
+    node.style.setProperty('--animate-duration', '0.4s');
+    
+    node.classList.add(`${prefix}animated`, animationName);
+
+    // When the animation ends, we clean the classes and resolve the Promise
+    function handleAnimationEnd(event) {
+      event.stopPropagation();
+      node.classList.remove(`${prefix}animated`, animationName);
+	  node.style.setProperty("pointer-events", "auto");
+      resolve('Animation ended');
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd, {once: true});
+});
