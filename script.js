@@ -31,6 +31,8 @@ function row_change() {
 
 	if(active_row>1){
 
+		console.log("guess check started")
+
 		var comparison_guess = code_to_guess;
 		var user_guess = [];
 
@@ -41,6 +43,9 @@ function row_change() {
 			user_guess.push(guess);
 		}
 
+		console.log("users guess:");
+		console.log(user_guess);
+
 		//var out_of_place_count = 0;
 		var correct_place_count = 0;
 
@@ -50,6 +55,7 @@ function row_change() {
 			var actual = code_to_guess[i];
 
 			if(guess==actual){
+				console.log("guess matched");
 				correct_place_count += 1;
 				user_guess.splice(i, 1);
 				comparison_guess.splice(i, 1);
@@ -57,7 +63,8 @@ function row_change() {
 			}
 		}
 
-		$('.correct_place_row_'+(active_row-1)).text(correct_place_count);
+		$('#correct_place_row_'+(active_row-1)).text(correct_place_count);
+		$('#correct_place_row_'+(active_row-1)).css("background-color", "LawnGreen");
 	}
 
 
