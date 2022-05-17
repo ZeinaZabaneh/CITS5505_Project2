@@ -82,7 +82,7 @@
     <section>
       <div class="game">
         <div class="grid-container" id="guess-container">
-          <div class="grid-item" id="row_1_box_1" data-colour_id="1"></div>
+          <div class="grid-item row-1" id="row_1_box_1" data-colour_id="1"></div>
           <div
             class="grid-item row-1"
             id="row_1_box_2"
@@ -265,29 +265,13 @@
           <div class="grid-item"></div>
         </div>
       </div>
+
+      <button type="button" class="button" onclick="row_change()">Enter</button>
+
     </section>
     <footer class="game-footer">
       <p>© 2022, Benjamin Willcocks & Zeina Zabaneh</p>
     </footer>
-
-  <script>
-
-    $(".grid-item").click(function(event) {
-      
-        console.log("clicked")
-    
-      var box_id = "#"+$(this).attr('id');
-      
-      var colours = ["red","blue","green","orange","pink","yellow"];
-      
-        $(box_id).attr('data-colour_id', ((parseInt($(box_id).attr('data-colour_id'))+1)%5))
-      
-      $(box_id).css('background-color', colours[parseInt($(box_id).attr('data-colour_id'))]);
-    
-    });
-    </script>
-
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
   </body>
 </html>

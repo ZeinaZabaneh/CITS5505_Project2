@@ -17,16 +17,25 @@ document.querySelector("#close").addEventListener("click", function(){
     document.querySelector(".popup").style.display = "none";
 });
 
-$('.grid-item').click(function(event) {
+// Game Functionality
+
+var active_row = 0;
+
+function row_change() {
 	
-    console.log("clicked")
+	active_row += 1;
 
-	var box_id = "#"+$(this).attr('id');
-  
-	var colours = ["red","blue","green","orange","pink","yellow"];
-  
-    $(box_id).attr('data-colour_id', ((parseInt($(box_id).attr('data-colour_id'))+1)%5))
-  
-	$(box_id).css('background-color', colours[parseInt($(box_id).attr('data-colour_id'))]);
+	$('.row-'+active_row).click(function(event) {
 
-});
+		var box_id = "#"+$(this).attr('id');
+	  
+		var colours = ["red","blue","green","orange","pink","yellow"];
+	  
+		$(box_id).attr('data-colour_id', ((parseInt($(box_id).attr('data-colour_id'))+1)%5))
+	  
+		$(box_id).css('background-color', colours[parseInt($(box_id).attr('data-colour_id'))]);
+	
+	});
+
+}
+
