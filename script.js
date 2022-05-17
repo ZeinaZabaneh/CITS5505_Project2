@@ -22,6 +22,8 @@ document.querySelector("#close").addEventListener("click", function(){
 var active_row = 0;
 
 function row_change() {
+
+	$('.row-'+active_row).css('pointer-events', 'none');
 	
 	active_row += 1;
 
@@ -36,6 +38,19 @@ function row_change() {
 		$(box_id).css('background-color', colours[parseInt($(box_id).attr('data-colour_id'))]);
 	
 	});
+
+	if(active_row>1){
+
+		const boxes_in_active_row = document.getElementsByClassName("row-"+active_row);
+
+		for(let box of boxes_in_active_row){
+
+			var check = box.getAttribute("data-colour_id");
+			console.log(check);
+
+		}
+
+	}
 
 }
 
