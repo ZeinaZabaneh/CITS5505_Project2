@@ -134,7 +134,7 @@ align-items: center;
   
 
 .button {
-    background-color: rgba(255, 140, 140, 0.8);
+    background-color: rgba(235, 235, 235, 0.8);
     border: 1px solid lightslategray;
     justify-content: center;
     align-content: center;
@@ -143,5 +143,20 @@ align-items: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    left: 45%;
+    transform: translateY(-90%);
+    position: relative;
+    animation: colour_play_button 10s infinite;
     }
+
+    @keyframes colour_play_button {
+        from {background-color: red;}
+        14% {background-color: orange;}
+        29% {background-color: yellow;}
+        43% {background-color: green;}
+        57% {background-color: blue;}
+        71% {background-color: indigo;}
+        85% {background-color: violet;}
+        to {background-color: red;}
+       }
     
