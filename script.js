@@ -33,7 +33,7 @@ function row_change() {
 
 		console.log("guess check started")
 
-		var comparison_guess = code_to_guess;
+		var comparison_guess = code_to_guess.slice();
 		var user_guess = [];
 
 		const boxes_in_previous_row = document.getElementsByClassName("row-"+(active_row-1));
@@ -45,16 +45,18 @@ function row_change() {
 
 		console.log("users guess:");
 		console.log(user_guess);
+		console.log("actual code");
+		console.log(comparison_guess);
 
-		//var out_of_place_count = 0;
+		var out_of_place_count = 0;
 		var correct_place_count = 0;
 
-		for(let i=0; i<code_to_guess.length; i++) {
+		for(let i=0; i<comparison_guess.length; i++) {
 
 			var guess = user_guess[i]
-			var actual = code_to_guess[i];
+			var actual = comparison_guess[i];
 
-			if(guess==actual){
+			if(parseInt(guess)==actual){
 				console.log("guess matched");
 				correct_place_count += 1;
 				user_guess.splice(i, 1);
@@ -63,8 +65,31 @@ function row_change() {
 			}
 		}
 
+		for(let i=0; i<user_guess.length; i++) {
+
+			var guess = user_guess[i]
+
+			for(let j=0; j<comparison_guess.length; j++) {
+
+				var possible_match = comparison_guess[j];
+
+				if(parseInt(guess)==possible_match){
+					console.log("guess matched wrong pos.");
+					out_of_place_count += 1;
+					user_guess.splice(i, 1);
+					comparison_guess.splice(j, 1);
+					i -= 1;
+					break;
+				}
+		}
+
+	}
+
 		$('#correct_place_row_'+(active_row-1)).text(correct_place_count);
-		$('#correct_place_row_'+(active_row-1)).css("background-color", "LawnGreen");
+		$('#correct_place_row_'+(active_row-1)).css("background-color", "YellowGreen");
+
+		$('#out_of_place_row_'+(active_row-1)).text(out_of_place_count);
+		$('#out_of_place_row_'+(active_row-1)).css("background-color", "orange");
 	}
 
 
