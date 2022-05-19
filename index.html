@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Page Description" />
     <title>Colourdle</title>
     <!-- CSS -->
@@ -32,13 +33,12 @@
     ></script>
 
     <link
-    rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
-
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
   </head>
   <body>
-    <div class="popup">
+    <div class="popup dark light_bg">
       <h2 id="HowToPlay">How to Play</h2>
       <p>
         Guess the <b>Colourdle</b> code in 8 tries.<br /><br />
@@ -50,46 +50,123 @@
         (green) and how many colours have been guessed correctly but in the
         wrong spot (yellow).
       </p>
-      <a href="#" id="close">Let's Go</a>
+      <a class="close-btn light" href="#" id="close">Let's Go</a>
+    </div>
+    <div class="SettingsPopup dark light_bg">
+      <i class="fa-solid fa-circle-xmark dark" id="Xclose"></i>
+      <h2 id="Settings">Settings</h2>
+      <div id="dark-mode">
+        <p>Dark Mode</p>
+      </div>
+      <div id="dm-toggle">
+        <label class="toggle">
+          <input type="checkbox" onclick="darkFunc()" />
+          <span class="slider round"></span>
+          <span class="labels" data-on="ON" data-off="OFF"></span>
+        </label>
+      </div>
     </div>
     <header>
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
           <div class="navbar-header">
             <a class="navbar-brand" href="#">Colourdle</a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
+            <!-- <li class="nav-item"> -->
+            <a href="#" class="nav-link d-flex flex-column">
+              <i class="fa-solid fa-circle-info dark" id="info"></i>
+            </a>
+            <!-- </li> -->
+            <!-- <li class="nav-item"> -->
+            <a href="#" class="nav-link d-flex flex-column">
+              <i class="fa-solid fa-gear dark" id="settings"></i>
+            </a>
+            <!-- <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button> -->
           </div>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a href="#" class="nav-link d-flex flex-column">
-                  <i class="fa-solid fa-circle-info" id="info"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link d-flex flex-column">
-                  <i class="fa-solid fa-gear"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
+          <!-- <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+  
+                </li>
+              </ul>
+            </div> -->
         </div>
       </nav>
     </header>
-    <section>
+    <section class="game-area">
       <div class="game">
+        <div class="grid-container" id="arrow-container">
+          <div class="arrow-grid-item" id="arrow_r1">
+            <i
+              class="fa-solid fa-angles-right arrow_r1"
+              id="arrow-row-1"
+              style="display: block"
+            ></i>
+          </div>
+          <div class="arrow-grid-item" id="arrow_r2">
+            <i
+              class="fa-solid fa-angles-right arrow_r2"
+              id="arrow-row-2"
+              style="display: none"
+            ></i>
+          </div>
+          <div class="arrow-grid-item" name="arrow">
+            <i
+              class="fa-solid fa-angles-right arrow_r3"
+              id="arrow-row-3"
+              style="display: none"
+            ></i>
+          </div>
+          <div class="arrow-grid-item" name="arrow">
+            <i
+              class="fa-solid fa-angles-right arrow_r4"
+              id="arrow-row-4"
+              style="display: none"
+            ></i>
+          </div>
+          <div class="arrow-grid-item" name="arrow">
+            <i
+              class="fa-solid fa-angles-right arrow_r5"
+              id="arrow-row-5"
+              style="display: none"
+            ></i>
+          </div>
+          <div class="arrow-grid-item" name="arrow">
+            <i
+              class="fa-solid fa-angles-right arrow_r6"
+              id="arrow-row-6"
+              style="display: none"
+            ></i>
+          </div>
+          <div class="arrow-grid-item" name="arrow">
+            <i
+              class="fa-solid fa-angles-right arrow_r7"
+              id="arrow-row-7"
+              style="display: none"
+            ></i>
+          </div>
+          <div class="arrow-grid-item" name="arrow">
+            <i
+              class="fa-solid fa-angles-right arrow_r8"
+              id="arrow-row-8"
+              style="display: none"
+            ></i>
+          </div>
+        </div>
         <div class="grid-container" id="guess-container">
-          <div class="grid-item row-1" id="row_1_box_1" data-colour_id="19"></div>
+          <div
+            class="grid-item row-1"
+            id="row_1_box_1"
+            data-colour_id="19"
+          ></div>
           <div
             class="grid-item row-1"
             id="row_1_box_2"
@@ -254,7 +331,6 @@
           ></div>
         </div>
         <div class="grid-container" id="hint-container">
-
           <div class="grid-item" id="correct_place_row_1"></div>
           <div class="grid-item" id="out_of_place_row_1"></div>
 
@@ -278,16 +354,22 @@
 
           <div class="grid-item" id="correct_place_row_8"></div>
           <div class="grid-item" id="out_of_place_row_8"></div>
-
         </div>
       </div>
-
-      <button type="button" class="button" id="enter_button" onclick="row_change()">Play</button>
-
+      <div class="btn">
+        <button
+          type="button"
+          class="button"
+          id="enter_button"
+          onclick="row_change()"
+        >
+          Play
+        </button>
+      </div>
     </section>
     <footer class="game-footer">
       <p>© 2022, Benjamin Willcocks & Zeina Zabaneh</p>
     </footer>
-  <script src="script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

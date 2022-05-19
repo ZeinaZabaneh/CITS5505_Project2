@@ -17,6 +17,37 @@ document.querySelector("#close").addEventListener("click", function(){
     document.querySelector(".popup").style.display = "none";
 });
 
+// Settings pop-up
+
+document.querySelector("#settings").addEventListener("click", function(){
+    document.querySelector(".SettingsPopup").style.display = "block";
+});
+
+document.querySelector("#Xclose").addEventListener("click", function(){
+document.querySelector(".SettingsPopup").style.display = "none";
+});
+
+function darkFunc() {
+// $(document).ready(function(){
+    // $(".toggle").on('click', function(){
+        let current_theme = $("html").attr("data-theme");
+console.log(current_theme)
+        if(current_theme == "dark") {
+            $("html").attr("data-theme", "light");
+            console.log("if")
+        }
+        else {
+            $("html").attr("data-theme", "dark");
+            console.log("else")
+        }
+    }
+// })
+
+// function darkFunc() {
+//   var element = document.body;
+//   element.classList.toggle("dark-mode");
+// }
+
 // Game Functionality
 
 var code_to_guess = [1,2,3,4];
@@ -32,11 +63,16 @@ function row_change() {
 	if(active_row>1){
 
 		console.log("guess check started")
+        
 
 		var comparison_guess = code_to_guess.slice();
 		var user_guess = [];
 
 		const boxes_in_previous_row = document.getElementsByClassName("row-"+(active_row-1));
+
+        if(active_row>1 & active_row<9){
+        document.getElementById("arrow-row-"+(active_row)).style.display = 'block';
+        document.getElementById("arrow-row-"+(active_row-1)).style.display = 'none';}
 
 		for(let i=0; i<code_to_guess.length; i++) {
 			var guess = boxes_in_previous_row[i].getAttribute("data-colour_id");
